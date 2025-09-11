@@ -1,32 +1,31 @@
-// src/App.js
-import React, { useState } from "react";
-import logo from "./logo.svg"; // CRA includes this by default
-import "./App.css";
+import { useState } from 'react'
+//import reactLogo from './assets/react.svg'
+//import viteLogo from '/vite.svg'
+import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
+  const [isOn, setIsOn] = useState(false);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="React logo" />
-        <h1>React + CRA Counter</h1>
+    <>
 
-        <div className="card">
-          <button onClick={() => setCount(count + 1)}>
-            Count is {count}
-          </button>
-          <p>
-            Edit <code>src/App.js</code> and save to reload
-          </p>
-        </div>
-
-        <p className="read-the-docs">
-          Click the React logo to learn more
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
         </p>
-      </header>
+      </div>
+      
+    <div>
+      <p>The switch is {isOn ? "ON" : "OFF"}</p>
+      <button onClick={() => setIsOn(!isOn)}>Toggle</button>
     </div>
-  );
+
+    </>
+  )
 }
 
-export default App;
+export default App
